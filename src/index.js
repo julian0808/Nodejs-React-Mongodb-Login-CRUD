@@ -1,6 +1,10 @@
 import app from './app.js';
 import { connectDB } from './db.js';
+require("dotenv").config()
 
 connectDB();
-app.listen(4000);
-console.log('Server on port', 4000);
+
+
+app.listen(process.env.PORT || 4000, () => {
+    console.log('You are connected');
+});
